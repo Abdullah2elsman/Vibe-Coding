@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium E-Commerce Platform built with Vanilla JS, sleek styling, and FakeStoreAPI">
+    <title>Aurora E-Commerce | Premium Discoveries</title>
+    <!-- Modern Google Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">
+            <span class="gradient-text">Aurora</span>
+        </div>
+        <nav class="nav">
+            <a href="#">Home</a>
+            <a href="#">Shop</a>
+            <a href="#">Categories</a>
+            <!-- Simple cart with a dynamically updated count -->
+            <a href="#" class="cart-icon" onclick="toggleCart(event)">Cart <span id="cart-count">0</span></a>
+        </nav>
+    </header>
+
+    <!-- Main Application Content -->
+    <main class="main-content">
+        <!-- Hero Banner Section -->
+        <section class="hero">
+            <h1 class="hero-title">Discover the <span class="gradient-text">Extraordinary</span>.</h1>
+            <p class="hero-subtitle">Elevate your lifestyle with our premium collection of products curated just for you.</p>
+        </section>
+
+        <!-- Loading Indicator -->
+        <div id="loader" class="loader-container">
+            <div class="spinner"></div>
+            <p>Loading products...</p>
+        </div>
+
+        <!-- Dynamic Products Grid -->
+        <section id="products-container" class="products-grid hidden">
+            <!-- Products will be dynamically injected here via JS -->
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2026 Aurora E-Commerce. All rights reserved.</p>
+    </footer>
+
+    <!-- Cart Sidebar Overlay -->
+    <div id="cart-overlay" class="cart-overlay hidden" onclick="toggleCart()"></div>
+
+    <!-- Cart Sidebar -->
+    <aside id="cart-sidebar" class="cart-sidebar hidden">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="close-cart-btn" onclick="toggleCart()">&times;</button>
+        </div>
+        <div id="cart-items-container" class="cart-items-container">
+            <!-- Cart items dynamically injected here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total-row">
+                <span>Total:</span>
+                <span id="cart-total">$0.00</span>
+            </div>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </aside>
+
+    <!-- Core App Logic -->
+    <script src="./script.js"></script>
+</body>
+</html>
