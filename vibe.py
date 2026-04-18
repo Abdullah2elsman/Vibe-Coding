@@ -1,6 +1,6 @@
 import requests
 
-open_router_key = "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"
+open_router_key = "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"
 
 headers = {
     "Authorization": "Bearer " + open_router_key,
@@ -15,13 +15,13 @@ response = requests.post(
         "messages": [
             {
                 "role": "user",
-                "content": "give me some info about JS"
+                "content": "generate text contain 50 words"
             }
         ],
     }
 )
 
 if response.status_code == 200:
-    print(response.json())
+    print(response.json().choices.message.content)
 else:
     print(f"Error {response.status_code}: {response.text}")
